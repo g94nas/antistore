@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-// import Header from "./Header";
+import Header from "./Header";
 
 const GlobalStyles = createGlobalStyle`
     html {
@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <GlobalStyles />
-      {/* <Header /> */}
+      <Header />
       <h2>I am the page component</h2>
       {children}
     </div>

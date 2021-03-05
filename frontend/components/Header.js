@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import Link from "next/link";
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,67 +15,76 @@ const Wrapper = styled.div`
     height: 100%;
     width: 100%;
     display: flex;
-    flex: 50%;
-    padding-right: 2rem;
-    justify-content: space-evenly;
+    flex: 0.5;
+    padding-right: 8rem;
+    justify-content: flex-end;
     flex-direction: row;
     align-items: center;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    list-style: none;
   }
 
   ul {
     height: 100%;
     display: flex;
     flex-direction: row;
-    text-decoration: none;
+    justify-content: center;
   }
 
-  h1 {
+  a {
     text-align: center;
-    margin: 0 1rem;
+    font-family: "Poppins";
+    font-weight: 600;
+    margin: 0 2rem;
     justify-self: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--secondaryColor);
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+    line-height: 30px;
   }
 
   .div-antistore {
+    display: flex;
     height: 100%;
-    flex: 50%;
+    flex: 0.5;
     width: 100%;
+    padding-left: 8rem;
     justify-content: flex-start;
-    align-self: center;
-    padding-left: 2rem;
+  }
 
-    div {
-      width: 80%;
-      height: 80%;
-      background-color: var(--secondaryColor);
-    }
-
-    h1 {
-      height: 100%;
-      text-align: center;
-      font-size: 5rem;
-      color: var(--primaryColor);
-    }
+  .h1-logo {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 80%;
+    border-radius: 3px;
+    font-size: 4rem;
+    padding: 0 2rem;
+    color: var(--primaryColor);
+    background: var(--secondaryColor);
   }
 `;
 
 const Header = () => {
   return (
     <Wrapper>
-      <div classname="div-antistore">
-        <div>
-          <h1>ANTISTORE</h1>
-        </div>
+      <div className="div-antistore">
+        <h1 className="h1-logo">ANTISTORE</h1>
       </div>
       <div>
         <li>
           <ul>
-            <h1>Cart</h1>
-            <h1>Products</h1>
-            <h1>Register</h1>
-            <h1>Login</h1>
+            <Link href="/">CART</Link>
+            <Link href="/">PRODUCTS</Link>
+            <Link href="/">REGISTER</Link>
+            <Link href="/">LOGIN</Link>
           </ul>
         </li>
       </div>

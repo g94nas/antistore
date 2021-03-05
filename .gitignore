@@ -1,4 +1,7 @@
 backend/.env
 backend/node_modules
 frontend/node_modules
-backend/.keystone/admin/.next/static/webpack/22478d44edd78cfbda9a.hot-update.json
+node_modules
+
+frontend/.next/cache/
+frontend/.next/static/

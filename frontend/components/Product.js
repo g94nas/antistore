@@ -1,18 +1,14 @@
-//TODO
-//1. ADD TRANSITIONS
-//2. ADD ACTION TO ADD TO CART BUTTON
-
 import { useState } from "react";
 import formatMoney from "../lib/formatMoney";
 import { useRouter } from "next/router";
-import { FeaturedProductStyle } from "./styles/FeaturedProductStyle";
+import { ProductStyle } from "./styles/ProductStyle";
 
-const FeaturedProduct = ({ product }) => {
+const Product = ({ product }) => {
   const router = useRouter();
   const [showButton, setShowButton] = useState(false);
 
   return (
-    <FeaturedProductStyle>
+    <ProductStyle>
       <div
         className="div-bg"
         onClick={() => router.push(`/product/${product?.id}`)}
@@ -36,8 +32,8 @@ const FeaturedProduct = ({ product }) => {
           {showButton ? <button type="button">Add to cart</button> : ""}
         </div>
       </div>
-    </FeaturedProductStyle>
+    </ProductStyle>
   );
 };
 
-export default FeaturedProduct;
+export default Product;

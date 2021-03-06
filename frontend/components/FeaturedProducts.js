@@ -11,6 +11,19 @@ const FeaturedStyles = styled.div`
   height: 500px;
 `;
 
+const H1 = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 8rem;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 3rem 0rem;
+  text-transform: uppercase;
+`;
+
 const FEATURED_PRODUCTS = gql`
   query FEATURED_PRODUCTS {
     allProducts(where: { featured: true }) {
@@ -35,11 +48,14 @@ const FeaturedProducts = () => {
   if (loading) return "loading...";
 
   return (
-    <FeaturedStyles>
-      {data.allProducts.map((product) => (
-        <FeaturedProduct key={product.id} product={product} />
-      ))}
-    </FeaturedStyles>
+    <>
+      <H1>Featured Products</H1>
+      <FeaturedStyles>
+        {data?.allProducts.map((product) => (
+          <FeaturedProduct key={product.id} product={product} />
+        ))}
+      </FeaturedStyles>
+    </>
   );
 };
 

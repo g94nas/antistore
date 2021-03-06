@@ -1,4 +1,11 @@
+//TODO
+//1. ADD TRANSITIONS
+//2. ADD ACTION TO ADD TO CART BUTTON
+
 import styled from "styled-components";
+import { useState } from "react";
+import formatMoney from "../lib/formatMoney";
+import { useRouter } from "next/router";
 
 const FeaturedProductStyle = styled.div`
   display: flex;
@@ -21,12 +28,14 @@ const FeaturedProductStyle = styled.div`
   }
 
   .div-main {
+    position: relative;
     padding-top: 2rem;
     height: 375px;
     border-radius: 3px;
     width: 275px;
     margin-bottom: 1rem;
     background-color: white;
+    cursor: pointer;
 
     div {
       display: flex;
@@ -66,13 +75,39 @@ const FeaturedProductStyle = styled.div`
       font-weight: 600;
       font-size: 1rem;
     }
+
+    button {
+      position: absolute;
+      background: var(--secondaryColor);
+      font-weight: bold;
+      padding: 0 2rem;
+      border-radius: 3px;
+      font-size: 2rem;
+      color: var(--primaryColor);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      box-shadow: var(--bs);
+      text-transform: uppercase;
+      bottom: -40px;
+      left: 50%;
+      margin-left: -85.5px;
+    }
   }
 `;
 
 const FeaturedProduct = ({ product }) => {
+  const router = useRouter();
+  const [showButton, setShowButton] = useState(false);
+
   return (
     <FeaturedProductStyle>
-      <div className="div-bg">
+      <div
+        className="div-bg"
+        onClick={() => router.push(`/product/${product?.id}`)}
+        onMouseEnter={() => setShowButton(true)}
+        onMouseLeave={() => setShowButton(false)}
+      >
         <div className="div-main">
           <div>
             <img
@@ -85,8 +120,9 @@ const FeaturedProduct = ({ product }) => {
           </h3>
           <span>{product?.description}</span>
           <h3>
-            <span>{product?.price}</span>
+            <span>{formatMoney(product?.price)}</span>
           </h3>
+          {showButton ? <button type="button">Add to cart</button> : ""}
         </div>
       </div>
     </FeaturedProductStyle>

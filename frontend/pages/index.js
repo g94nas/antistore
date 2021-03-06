@@ -1,6 +1,7 @@
 import Hero from "../components/Hero";
 import styled from "styled-components";
 import FeaturedProducts from "../components/FeaturedProducts";
+import AllProducts from "../components/AllProducts";
 
 const Divider = styled.div`
   display: flex;
@@ -14,6 +15,13 @@ const Divider = styled.div`
     height: 200px;
     background: var(--primaryColor);
   }
+
+  .longer-divider {
+    width: 5px;
+    height: 200px;
+    background: var(--primaryColor);
+    margin-top: 4rem;
+  }
 `;
 
 const HomePage = () => {
@@ -24,6 +32,10 @@ const HomePage = () => {
         <div></div>
       </Divider>
       <FeaturedProducts />
+      <Divider>
+        <div className="longer-divider"></div>
+      </Divider>
+      <AllProducts />
     </>
   );
 };

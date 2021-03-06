@@ -161,6 +161,7 @@ type Product {
   status: String
   price: Int
   photo: ProductImage
+  featured: Boolean
 }
 
 input ProductWhereInput {
@@ -234,6 +235,8 @@ input ProductWhereInput {
   price_not_in: [Int]
   photo: ProductImageWhereInput
   photo_is_null: Boolean
+  featured: Boolean
+  featured_not: Boolean
 }
 
 input ProductWhereUniqueInput {
@@ -253,6 +256,8 @@ enum SortProductsBy {
   price_DESC
   photo_ASC
   photo_DESC
+  featured_ASC
+  featured_DESC
 }
 
 input ProductUpdateInput {
@@ -261,6 +266,7 @@ input ProductUpdateInput {
   status: String
   price: Int
   photo: ProductImageRelateToOneInput
+  featured: Boolean
 }
 
 input ProductsUpdateInput {
@@ -274,6 +280,7 @@ input ProductCreateInput {
   status: String
   price: Int
   photo: ProductImageRelateToOneInput
+  featured: Boolean
 }
 
 input ProductsCreateInput {

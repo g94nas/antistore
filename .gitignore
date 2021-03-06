@@ -5,3 +5,4 @@ node_modules
 
 frontend/.next/cache/
 frontend/.next/static/
+backend/.keystone/admin/.next/cache/

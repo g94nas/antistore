@@ -234,6 +234,8 @@ export type ProductWhereInput = {
   readonly price_not_in?: ReadonlyArray<Scalars['Int'] | null> | null;
   readonly photo?: ProductImageWhereInput | null;
   readonly photo_is_null?: Scalars['Boolean'] | null;
+  readonly featured?: Scalars['Boolean'] | null;
+  readonly featured_not?: Scalars['Boolean'] | null;
 };
 
 export type ProductWhereUniqueInput = {
@@ -252,7 +254,9 @@ export type SortProductsBy =
   | 'price_ASC'
   | 'price_DESC'
   | 'photo_ASC'
-  | 'photo_DESC';
+  | 'photo_DESC'
+  | 'featured_ASC'
+  | 'featured_DESC';
 
 export type ProductUpdateInput = {
   readonly name?: Scalars['String'] | null;
@@ -260,6 +264,7 @@ export type ProductUpdateInput = {
   readonly status?: Scalars['String'] | null;
   readonly price?: Scalars['Int'] | null;
   readonly photo?: ProductImageRelateToOneInput | null;
+  readonly featured?: Scalars['Boolean'] | null;
 };
 
 export type ProductsUpdateInput = {
@@ -273,6 +278,7 @@ export type ProductCreateInput = {
   readonly status?: Scalars['String'] | null;
   readonly price?: Scalars['Int'] | null;
   readonly photo?: ProductImageRelateToOneInput | null;
+  readonly featured?: Scalars['Boolean'] | null;
 };
 
 export type ProductsCreateInput = {
@@ -469,7 +475,14 @@ export type UserListFn = (
 
 export type ProductListTypeInfo = {
   key: 'Product';
-  fields: 'id' | 'name' | 'description' | 'status' | 'price' | 'photo';
+  fields:
+    | 'id'
+    | 'name'
+    | 'description'
+    | 'status'
+    | 'price'
+    | 'photo'
+    | 'featured';
   backing: {
     readonly id: string;
     readonly name?: string | null;
@@ -477,6 +490,7 @@ export type ProductListTypeInfo = {
     readonly status?: string | null;
     readonly price?: number | null;
     readonly photo?: string | null;
+    readonly featured?: boolean | null;
   };
   inputs: {
     where: ProductWhereInput;

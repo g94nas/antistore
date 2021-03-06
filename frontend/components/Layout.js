@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
         --primaryColor: #000;
         --secondaryColor: #fff;
         --maxWidth: 1000px;
-        --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
+        --bs: 0 12px 24px 0 rgba(0,0,0,0.29);
 				font-size: 62.5%;
     };
 
@@ -39,7 +39,6 @@ const Layout = ({ children }) => {
     <div>
       <GlobalStyles />
       <Header />
-      <h2>I am the page component</h2>
       {children}
     </div>
   );

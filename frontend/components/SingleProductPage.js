@@ -37,7 +37,7 @@ const SingleProductStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
+    margin-top: 10rem;
     border-left: 5px solid black;
 
     h1 {
@@ -77,6 +77,7 @@ const SingleProductStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 10rem;
 
     img {
       margin-top: 5rem;

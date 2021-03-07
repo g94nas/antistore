@@ -8,7 +8,7 @@ import Product from "./Product";
 import { H1 } from "./FeaturedProducts";
 import styled from "styled-components";
 
-const ALL_PRODUCTS_QUERY = gql`
+export const ALL_PRODUCTS_QUERY = gql`
   query ALL_PRODUCTS_QUERY {
     allProducts(sortBy: name_DESC) {
       id
@@ -27,7 +27,6 @@ const ALL_PRODUCTS_QUERY = gql`
 const AllProductsStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex: 0.3;
   align-content: center;
   flex-direction: row;
   justify-content: center;

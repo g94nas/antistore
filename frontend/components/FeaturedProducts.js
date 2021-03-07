@@ -1,3 +1,6 @@
+//TODO
+// 1. ADD CARROUSEL
+
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/client";
 import FeaturedProduct from "./FeaturedProduct";
@@ -8,7 +11,8 @@ const FeaturedStyles = styled.div`
   align-content: center;
   flex-direction: row;
   justify-content: center;
-  height: 500px;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
 `;
 
 export const H1 = styled.h1`
@@ -24,7 +28,7 @@ export const H1 = styled.h1`
   text-transform: uppercase;
 `;
 
-const FEATURED_PRODUCTS = gql`
+export const FEATURED_PRODUCTS = gql`
   query FEATURED_PRODUCTS {
     allProducts(where: { featured: true }) {
       id

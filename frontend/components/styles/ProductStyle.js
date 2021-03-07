@@ -86,5 +86,16 @@ export const ProductStyle = styled.div`
       left: 50%;
       margin-left: -85.5px;
     }
+
+    .button-erase {
+      position: absolute;
+      padding: 1rem 2rem;
+      color: var(--secondaryColor);
+      background: linear-gradient(to right, #f2709c, #ff9472);
+      border-radius: 500px;
+      font-size: 1.5rem;
+      left: 120%;
+      bottom: 98%;
+    }
   }
 `;

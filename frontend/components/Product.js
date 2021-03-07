@@ -2,6 +2,7 @@ import { useState } from "react";
 import formatMoney from "../lib/formatMoney";
 import { useRouter } from "next/router";
 import { ProductStyle } from "./styles/ProductStyle";
+import DeleteProduct from "./DeleteProduct";
 
 const Product = ({ product }) => {
   const router = useRouter();
@@ -16,6 +17,11 @@ const Product = ({ product }) => {
         onMouseLeave={() => setShowButton(false)}
       >
         <div className="div-main">
+          {showButton ? (
+            <DeleteProduct id={product?.id}>Delete</DeleteProduct>
+          ) : (
+            ""
+          )}
           <div>
             <img
               src={product?.photo?.image?.publicUrlTransformed}

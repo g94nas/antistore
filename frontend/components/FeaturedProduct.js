@@ -6,6 +6,7 @@ import { useState } from "react";
 import formatMoney from "../lib/formatMoney";
 import { useRouter } from "next/router";
 import { FeaturedProductStyle } from "./styles/FeaturedProductStyle";
+import DeleteProduct from "./DeleteProduct";
 
 const FeaturedProduct = ({ product }) => {
   const router = useRouter();
@@ -15,12 +16,20 @@ const FeaturedProduct = ({ product }) => {
     <FeaturedProductStyle>
       <div
         className="div-bg"
-        onClick={() => router.push(`/product/${product?.id}`)}
         onMouseEnter={() => setShowButton(true)}
         onMouseLeave={() => setShowButton(false)}
       >
-        <div className="div-main">
+        <div
+          className="div-main"
+          onClick={() => router.push(`/product/${product?.id}`)}
+        >
           <div>
+            {showButton ? (
+              <DeleteProduct id={product?.id}>Delete</DeleteProduct>
+            ) : (
+              ""
+            )}
+
             <img
               src={product?.photo?.image?.publicUrlTransformed}
               alt={product?.name}

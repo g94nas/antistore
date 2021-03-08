@@ -3,6 +3,7 @@ import formatMoney from "../lib/formatMoney";
 import { useRouter } from "next/router";
 import { ProductStyle } from "./styles/ProductStyle";
 import DeleteProduct from "./DeleteProduct";
+import EditProductButton from "./EditProductButton";
 
 const Product = ({ product }) => {
   const router = useRouter();
@@ -19,6 +20,11 @@ const Product = ({ product }) => {
         <div className="div-main">
           {showButton ? (
             <DeleteProduct id={product?.id}>Delete</DeleteProduct>
+          ) : (
+            ""
+          )}
+          {showButton ? (
+            <EditProductButton id={product?.id}>Edit</EditProductButton>
           ) : (
             ""
           )}

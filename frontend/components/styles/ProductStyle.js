@@ -97,5 +97,16 @@ export const ProductStyle = styled.div`
       left: 120%;
       bottom: 98%;
     }
+
+    .button-edit {
+      position: absolute;
+      padding: 1rem 2rem;
+      color: var(--secondaryColor);
+      background: linear-gradient(to right, #7474bf, #348ac7);
+      border-radius: 500px;
+      font-size: 1.5rem;
+      left: 12%;
+      bottom: 98%;
+    }
   }
 `;

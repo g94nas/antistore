@@ -2,6 +2,8 @@ import Hero from "../components/Hero";
 import styled from "styled-components";
 import FeaturedProducts from "../components/FeaturedProducts";
 import AllProducts from "../components/AllProducts";
+import Pagination from "../components/Pagination";
+import { useRouter } from "next/router";
 
 const Divider = styled.div`
   display: flex;
@@ -25,6 +27,9 @@ const Divider = styled.div`
 `;
 
 const HomePage = () => {
+  const { query } = useRouter();
+  const page = parseInt(query.page);
+
   return (
     <>
       <Hero />
@@ -35,7 +40,8 @@ const HomePage = () => {
       <Divider>
         <div className="longer-divider"></div>
       </Divider>
-      <AllProducts />
+      <AllProducts page={page || 1} />
+      <Pagination page={page || 1} />
     </>
   );
 };

@@ -7,10 +7,11 @@ import gql from "graphql-tag";
 import Product from "./Product";
 import { H1 } from "./FeaturedProducts";
 import styled from "styled-components";
+import { productsPerPage } from "../config";
 
 export const ALL_PRODUCTS_QUERY = gql`
-  query ALL_PRODUCTS_QUERY {
-    allProducts(sortBy: name_DESC) {
+  query ALL_PRODUCTS_QUERY($skip: Int = 0, $first: Int) {
+    allProducts(first: $first, skip: $skip, sortBy: name_DESC) {
       id
       name
       price
@@ -33,8 +34,13 @@ const AllProductsStyle = styled.div`
   margin-bottom: 3rem;
 `;
 
-const AllProducts = () => {
-  const { loading, error, data } = useQuery(ALL_PRODUCTS_QUERY);
+const AllProducts = ({ page }) => {
+  const { loading, error, data } = useQuery(ALL_PRODUCTS_QUERY, {
+    variables: {
+      skip: page * productsPerPage - productsPerPage,
+      first: productsPerPage,
+    },
+  });
 
   if (loading) return "Loading...";
   if (error) return <p>{error.message}</p>;

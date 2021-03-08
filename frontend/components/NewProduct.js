@@ -6,61 +6,8 @@ import { H1 } from "./FeaturedProducts";
 import { ALL_PRODUCTS_QUERY } from "./AllProducts";
 import { FEATURED_PRODUCTS } from "./FeaturedProducts";
 import { useRouter } from "next/router";
+import { FormStyles } from "./styles/FormStyles";
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-  border: none;
-
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    outline: none;
-    background: var(--primaryColor);
-    color: var(--secondaryColor);
-    padding: 2rem;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: auto;
-    margin-top: 3rem;
-    cursor: pointer;
-  }
-
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    outline: none;
-    border: none;
-    border-left: solid 4px var(--primaryColor);
-    padding: 2rem;
-    justify-content: flex-start;
-  }
-
-  label {
-    text-transform: uppercase;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    font-weight: 600;
-  }
-
-  input {
-    display: flex;
-    justify-content: flex-start;
-    outline: none;
-    margin: 0 0 2rem 0rem;
-    min-width: 800px;
-    border: 2px solid var(--primaryColor);
-    padding: 0.5rem;
-    border-radius: 3px;
-  }
-`;
 const CREATE_NEW_PRODUCT = gql`
   mutation CREATE_NEW_PRODUCT(
     $name: String!
@@ -123,7 +70,7 @@ const NewProduct = () => {
     <>
       <h1>.</h1>
       <H1>Create Product</H1>
-      <Form onSubmit={handleSubmit}>
+      <FormStyles onSubmit={handleSubmit}>
         <fieldset disabled={loading} aria-busy={loading}>
           <label htmlFor="name">
             Name
@@ -184,7 +131,7 @@ const NewProduct = () => {
           </label>
           <button type="submit">Add New Product</button>
         </fieldset>
-      </Form>
+      </FormStyles>
     </>
   );
 };

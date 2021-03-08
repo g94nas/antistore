@@ -7,6 +7,7 @@ import formatMoney from "../lib/formatMoney";
 import { useRouter } from "next/router";
 import { FeaturedProductStyle } from "./styles/FeaturedProductStyle";
 import DeleteProduct from "./DeleteProduct";
+import EditProductButton from "./EditProductButton";
 
 const FeaturedProduct = ({ product }) => {
   const router = useRouter();
@@ -29,7 +30,11 @@ const FeaturedProduct = ({ product }) => {
             ) : (
               ""
             )}
-
+            {showButton ? (
+              <EditProductButton id={product?.id}>Edit</EditProductButton>
+            ) : (
+              ""
+            )}
             <img
               src={product?.photo?.image?.publicUrlTransformed}
               alt={product?.name}

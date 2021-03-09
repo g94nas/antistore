@@ -2,6 +2,7 @@ import { HeaderStyle } from "./styles/HeaderStyle";
 import React from "react";
 import Link from "next/link";
 import useUser from "./User";
+import Logout from "./Logout";
 
 const Header = () => {
   const user = useUser();
@@ -17,7 +18,7 @@ const Header = () => {
             <ul>
               <Link href="/">CART</Link>
               <Link href="/">PRODUCTS</Link>
-              <Link href="/">SIGN OUT</Link>
+              <Logout />
             </ul>
           </li>
         </div>

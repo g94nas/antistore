@@ -11,6 +11,26 @@ export const HeaderStyle = styled.div`
   position: fixed;
   z-index: 30;
 
+  button {
+    text-decoration: none;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 600;
+    margin: 0 2rem;
+    justify-self: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+    line-height: 30px;
+    border: none;
+    background: var(--primaryColor);
+    color: var(--secondaryColor);
+    text-transform: uppercase;
+    outline: none;
+  }
+
   div {
     height: 100%;
     width: 100%;

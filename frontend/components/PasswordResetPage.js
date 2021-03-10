@@ -1,5 +1,6 @@
 import useForm from "../lib/useForm";
 import gql from "graphql-tag";
+import DisplayError from "./ErrorMessage";
 import { useMutation } from "@apollo/client";
 import { FormStyles } from "./styles/FormStyles";
 
@@ -41,14 +42,14 @@ const PasswordResetPage = ({ token }) => {
     resetForm();
   }
 
-  const successfulError = data?.redeemUserPasswordResetToken.code
+  const successfulError = data?.redeemUserPasswordResetToken?.code
     ? data?.redeemUserPasswordResetToken
     : undefined;
 
   return (
     <FormStyles method="POST" onSubmit={handleSubmit}>
       <h2>Reset Your Password</h2>
-      <p>{error || successfulError}</p>
+      <DisplayError error={error || successfulError}></DisplayError>
       <fieldset>
         {data?.redeemUserPasswordResetToken === null && (
           <p>You can sign in now!</p>

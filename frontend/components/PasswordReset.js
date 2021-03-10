@@ -17,7 +17,7 @@ const PasswordReset = () => {
     email: "",
   });
 
-  const [sendUserPasswordResetLink, { data, loading, error }] = useMutation(
+  const [signup, { data, loading, error }] = useMutation(
     PASSWORD_RESET_MUTATION,
     {
       variables: inputs,
@@ -26,7 +26,7 @@ const PasswordReset = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const res = await sendUserPasswordResetLink().catch(console.log(error));
+    const res = await signup().catch(console.log(error));
     console.log(res);
     resetForm();
   }

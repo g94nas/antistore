@@ -9,6 +9,7 @@ import {
   statelessSessions,
 } from "@keystone-next/keystone/session";
 import "dotenv/config";
+import { sendPasswordResetEmail } from "./lib/email";
 
 const databaseURL = process.env.DATABASE_URL || "mongodb://localhost/antistore";
 
@@ -23,6 +24,11 @@ const { withAuth } = createAuth({
   secretField: "password",
   initFirstItem: {
     fields: ["name", "email", "password"],
+  },
+  passwordResetLink: {
+    async sendToken(args) {
+      await sendPasswordResetEmail(args.token, args.identity);
+    },
   },
 });
 

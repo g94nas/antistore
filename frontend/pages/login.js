@@ -1,7 +1,13 @@
 import Login from "../components/Login";
+import PasswordReset from "../components/PasswordReset";
 
 const LoginPage = () => {
-  return <Login />;
+  return (
+    <>
+      <Login />
+      <PasswordReset />
+    </>
+  );
 };
 
-export default Login;
+export default LoginPage;

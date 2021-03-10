@@ -1,12 +1,15 @@
+//TODO
+// 1. Handle error
+// 2. Reroute if user is logged in already
 import useForm from "../lib/useForm";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/client";
 import { FormStyles } from "./styles/FormStyles";
 import { H1 } from "./FeaturedProducts";
-import { router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
-const SIGNUP_MUTATION = gql`
-  mutation SIGNUP_MUTATION(
+const REGISTER_MUTATION = gql`
+  mutation REGISTER_MUTATION(
     $email: String!
     $name: String!
     $password: String!
@@ -28,7 +31,7 @@ export default function SignUp() {
 
   const router = useRouter();
 
-  const [register, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
+  const [register, { data, loading, error }] = useMutation(REGISTER_MUTATION, {
     variables: inputs,
   });
 
@@ -81,7 +84,7 @@ export default function SignUp() {
               onChange={handleChange}
             />
           </label>
-          <button type="submit">Sign Up!</button>
+          <button type="submit">Register!</button>
         </fieldset>
       </FormStyles>
     </>

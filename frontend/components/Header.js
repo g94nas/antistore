@@ -4,9 +4,11 @@ import Link from "next/link";
 import useUser from "./User";
 import Logout from "./Logout";
 import Cart from "./Cart";
+import { useCart } from "../lib/cartState";
 
 const Header = () => {
   const user = useUser();
+  const { toggleCartState } = useCart();
 
   return (
     <>
@@ -18,7 +20,9 @@ const Header = () => {
           <div>
             <li>
               <ul>
-                <Link href="/">CART</Link>
+                <button type="button" onClick={toggleCartState}>
+                  CART
+                </button>
                 <Link href="/">PRODUCTS</Link>
                 <Logout />
               </ul>

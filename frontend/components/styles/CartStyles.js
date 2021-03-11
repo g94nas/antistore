@@ -49,6 +49,14 @@ const CartStyles = styled.div`
     border-radius: 3px;
   }
 
+  h3 {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
   ul {
     display: flex;
     flex-direction: column;

@@ -5,6 +5,7 @@ import useUser from "./User";
 import Logout from "./Logout";
 import Cart from "./Cart";
 import { useCart } from "../lib/cartState";
+import CartNumber from "./CartNumber";
 
 const Header = () => {
   const user = useUser();
@@ -22,6 +23,7 @@ const Header = () => {
               <ul>
                 <button type="button" onClick={toggleCartState}>
                   CART
+                  <CartNumber />
                 </button>
                 <Link href="/">PRODUCTS</Link>
                 <Logout />

@@ -1,5 +1,6 @@
 import { CartItemStyles } from "./styles/CartItemStyles";
 import formatMoney from "../lib/formatMoney";
+import RemoveFromCart from "./RemoveFromCart";
 
 const CartItem = ({ cartItem }) => {
   const product = cartItem.product;
@@ -20,6 +21,7 @@ const CartItem = ({ cartItem }) => {
             </em>
           </p>
         </div>
+        <RemoveFromCart id={cartItem.id} />
       </div>
     </CartItemStyles>
   );

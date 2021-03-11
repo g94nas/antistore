@@ -12,6 +12,8 @@ export const HeaderStyle = styled.div`
   z-index: 15;
 
   button {
+    display: flex;
+    flex-direction: row;
     text-decoration: none;
     text-align: center;
     font-family: "Poppins";
@@ -94,5 +96,15 @@ export const HeaderStyle = styled.div`
     padding: 0 2rem;
     color: var(--primaryColor);
     background: var(--secondaryColor);
+  }
+
+  p {
+    display: flex;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    padding: 0 0.7rem;
+    color: var(--primaryColor);
+    background: var(--secondaryColor);
+    border-radius: 50%;
   }
 `;

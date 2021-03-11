@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { ProductStyle } from "./styles/ProductStyle";
 import DeleteProduct from "./DeleteProduct";
 import EditProductButton from "./EditProductButton";
+import AddToCart from "./AddToCart";
 
 const Product = ({ product }) => {
   const router = useRouter();
@@ -41,7 +42,7 @@ const Product = ({ product }) => {
           <h3>
             <span>{formatMoney(product?.price)}</span>
           </h3>
-          {showButton ? <button type="button">Add to cart</button> : ""}
+          {showButton ? <AddToCart id={product?.id} /> : ""}
         </div>
       </div>
     </ProductStyle>

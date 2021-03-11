@@ -5,6 +5,7 @@ import { Product } from "./schemas/Product";
 import { ProductImage } from "./schemas/ProductImage";
 import { CartItem } from "./schemas/CartItem";
 import { createAuth } from "@keystone-next/auth";
+import { extendGraphqlSchema } from "./mutations";
 import {
   withItemData,
   statelessSessions,
@@ -51,6 +52,7 @@ export default withAuth(
       ProductImage,
       CartItem,
     }),
+    extendGraphqlSchema,
     ui: {
       //TODO: change this for roles
       isAccessAllowed: ({ session }) => {

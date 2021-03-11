@@ -9,7 +9,7 @@ export const HeaderStyle = styled.div`
   justify-content: center;
   background: var(--primaryColor);
   position: fixed;
-  z-index: 30;
+  z-index: 15;
 
   button {
     text-decoration: none;

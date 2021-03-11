@@ -8,6 +8,23 @@ export const GET_USER_QUERY = gql`
         id
         email
         name
+        cart {
+          id
+          quantity
+          product {
+            id
+            price
+            name
+            description
+            photo {
+              image {
+                publicUrlTransformed(
+                  transformation: { width: "120", crop: "limit" }
+                )
+              }
+            }
+          }
+        }
       }
     }
   }

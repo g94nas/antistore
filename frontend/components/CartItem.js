@@ -11,6 +11,7 @@ const CartItem = ({ cartItem }) => {
         <img
           src={product?.photo?.image?.publicUrlTransformed}
           alt={product.name}
+          width={150}
         />
         <div className="div-column">
           <h3>{product.name}</h3>

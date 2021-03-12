@@ -63,6 +63,25 @@ const CartStyles = styled.div`
     height: 50px;
     padding-left: 5rem;
   }
+
+  .button-cart {
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 3px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 160px;
+    margin-left: 5rem;
+    outline: none;
+    border: none;
+    background: var(--primaryColor);
+    color: var(--secondaryColor);
+    padding: 1rem;
+  }
 `;
 
 export default CartStyles;
